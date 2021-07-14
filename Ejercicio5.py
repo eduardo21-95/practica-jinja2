@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Request
+from fastapi import responses
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -15,4 +16,4 @@ async def read_item(request: Request):
 
 @app.get("/integrantes/", response_class=HTMLResponse)
 async def integrantes(request: Request, matricula: int, nombre: str, edad: int):
-    return miPlantilla.TemplateResponse("Eduardo.html",{"request": request, "matri": matricula, "nom": nombre, "edad": edad})
+    return miPlantilla.TemplateResponse("integrantes.html",{"request": request, "matri": matricula, "nom": nombre, "edad": edad})
