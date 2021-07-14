@@ -7,7 +7,7 @@ app = FastAPI(title="FastAPI con Jinja2")
 
 app.mount('/recurso', StaticFiles(directory='recursos'), name = "recursos")
 
-miPlantilla = Jinja2Templates(directory="plantillas")
+miPlantilla = Jinja2Templates(directory="templates")
 
 @app.get("/inicio", response_class=HTMLResponse)
 async def read_item(request: Request):
